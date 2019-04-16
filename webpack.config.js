@@ -6,5 +6,9 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: outputPath
+  },
+  //documentrootの追加
+  devServer: {
+    contentBase: outputPath
   }
 };
