@@ -1,4 +1,13 @@
 import _ from 'lodash';
+import Lion from './utilities';
+// jsの場合は拡張子省略可能
+// import { Nijou, NAME } from './utilities';
+// ＊全て取ってきて、utilitiesって名前をつけてあげている
+// asは名前の　競合を防ぐ必要がある場合に有効
+// import * as utilities from './utilities';
+
+// console.log(utilities.Nijou(9) + utilities.NAME);
+console.log(Lion.say());
 
 function component() {
   const element = document.createElement('div');
