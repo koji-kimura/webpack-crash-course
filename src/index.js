@@ -1,5 +1,9 @@
 import _ from 'lodash';
-import Lion from './utilities';
+// fromとかなしでも読み込める
+import './style.css';
+// console.log(style.toString());
+
+// import Lion from './utilities';
 // jsの場合は拡張子省略可能
 // import { Nijou, NAME } from './utilities';
 // ＊全て取ってきて、utilitiesって名前をつけてあげている
@@ -7,7 +11,7 @@ import Lion from './utilities';
 // import * as utilities from './utilities';
 
 // console.log(utilities.Nijou(9) + utilities.NAME);
-console.log(Lion.say());
+// console.log(Lion.say());
 
 function component() {
   const element = document.createElement('div');
@@ -17,3 +21,4 @@ function component() {
 }
 
 document.body.appendChild(component());
+document.body.classList.add('haikei');
