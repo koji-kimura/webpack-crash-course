@@ -1,6 +1,7 @@
 import _ from 'lodash';
 // fromとかなしでも読み込める
 import './style.css';
+import logo from './logo.png';
 // console.log(style.toString());
 
 // import Lion from './utilities';
@@ -22,3 +23,7 @@ function component() {
 
 document.body.appendChild(component());
 document.body.classList.add('haikei');
+
+const image = new Image();
+image.src = logo;
+document.body.appendChild(image);
