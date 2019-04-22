@@ -13,6 +13,7 @@ module.exports = {
       // 余計な記載が入っていたのが原因
       // loaderはタグ順に動く、後ろから順番に動く、まずスタイルの適応、その後でcssの適応が正しい
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loader: 'url-loader',
