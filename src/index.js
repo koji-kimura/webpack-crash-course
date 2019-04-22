@@ -1,6 +1,7 @@
 import _ from 'lodash';
 // fromとかなしでも読み込める
 import './style.css';
+import './style.scss';
 import logo from './logo.png';
 // console.log(style.toString());
 
