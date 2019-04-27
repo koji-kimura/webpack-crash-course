@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const outputPath = path.resolve(__dirname, 'dist');
 module.exports = {
   entry: './src/index.js',
@@ -14,8 +16,10 @@ module.exports = {
       // loaderはタグ順に動く、後ろから順番に動く、まずスタイルの適応、その後でcssの適応が正しい
       // 最後から順番に実行される
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /\.(sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loader: 'url-loader',
@@ -37,6 +41,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css'
     })
   ]
 };
