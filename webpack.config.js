@@ -13,10 +13,12 @@ module.exports = {
   },
   module: {
     rules: [
-      // cssを指定する
-      // 余計な記載が入っていたのが原因
-      // loaderはタグ順に動く、後ろから順番に動く、まずスタイルの適応、その後でcssの適応が正しい
-      // 最後から順番に実行される
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
         test: /\.(sc|c)ss$/,
